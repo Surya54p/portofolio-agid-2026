@@ -1,19 +1,15 @@
-import Image from "next/image";
+import Hero from "@/components/Hero";
+import AboutMe from "@/components/AboutMe";
+import MyJourney from "@/components/MyJourney";
+import WorkGallery from "@/components/WorkGallery";
 
 export default function Home() {
   return (
-    <div>
-      <main>
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-
-      </main>
-    </div>
+    <main>
+      <Hero />
+      <AboutMe />
+      <MyJourney />
+      <WorkGallery />
+    </main>
   );
 }

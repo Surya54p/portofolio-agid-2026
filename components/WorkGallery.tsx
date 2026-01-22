@@ -1,0 +1,48 @@
+import React from "react";
+import Image from "next/image";
+import ButtonTertiary from "./ButtonTertiary";
+
+const WorkGallery = () => {
+    const projects = Array(8).fill({
+        title: "Website 1",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
+        image: "/images/project_1.png"
+    });
+
+    return (
+        <section className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white">
+            <div className="max-w-7xl mx-auto">
+                <h2 className="text-3xl md:text-4xl font-semibold mb-12">My Work Galery</h2>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {projects.map((project, index) => (
+                        <div key={index} className="group bg-[#161616] rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:translate-y-[-4px] shadow-lg">
+                            <div className="relative aspect-video overflow-hidden">
+                                <Image
+                                    src={project.image}
+                                    alt={project.title}
+                                    fill
+                                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+                                {/* Overlay gradient */}
+                                <div className="absolute inset-0 bg-linear-to-t from-[#161616] to-transparent opacity-60"></div>
+                            </div>
+                            <div className="p-5">
+                                <h3 className="text-lg font-bold mb-2 group-hover:text-blue-400 transition-colors duration-300">{project.title}</h3>
+                                <p className="text-gray-400 text-xs leading-relaxed line-clamp-3">
+                                    {project.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="mt-16 text-center">
+                    <ButtonTertiary className="text-base">Show more</ButtonTertiary>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default WorkGallery;

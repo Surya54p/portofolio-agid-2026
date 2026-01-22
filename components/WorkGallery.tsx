@@ -1,6 +1,9 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import ButtonTertiary from "./ButtonTertiary";
+import Modal from "./Modal";
 
 const WorkGallery = () => {
     const projects = Array(8).fill({
@@ -9,6 +12,14 @@ const WorkGallery = () => {
         image: "/images/project_1.png"
     });
 
+    const [selectedProject, setSelectedProject] = useState<any>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = (project: any) => {
+        setSelectedProject(project);
+        setIsModalOpen(true);
+    };
+
     return (
         <section className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white">
             <div className="max-w-7xl mx-auto">
@@ -16,7 +27,11 @@ const WorkGallery = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {projects.map((project, index) => (
-                        <div key={index} className="group bg-[#161616] rounded-[10px] overflow-hidden border border-gray-800 transition-all duration-300 hover:border-gray-600 shadow-lg">
+                        <div
+                            key={index}
+                            onClick={() => openModal(project)}
+                            className="bg-[#161616] rounded-[10px] overflow-hidden border border-gray-800 transition-all duration-300 shadow-lg cursor-pointer"
+                        >
                             <div className="relative aspect-video overflow-hidden">
                                 <Image
                                     src={project.image}
@@ -28,7 +43,7 @@ const WorkGallery = () => {
                                 <div className="absolute inset-0 bg-linear-to-t from-[#161616] to-transparent opacity-60"></div>
                             </div>
                             <div className="p-5">
-                                <h3 className="text-lg font-normal mb-2 group-hover:text-blue-400 transition-colors duration-300">{project.title}</h3>
+                                <h3 className="text-lg font-normal mb-2 transition-colors duration-300">{project.title}</h3>
                                 <p className="text-gray-400 text-xs leading-relaxed line-clamp-3">
                                     {project.description}
                                 </p>
@@ -41,6 +56,16 @@ const WorkGallery = () => {
                     <ButtonTertiary className="text-base">Show more</ButtonTertiary>
                 </div>
             </div>
+
+            {selectedProject && (
+                <Modal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    title={selectedProject.title}
+                    description={selectedProject.description}
+                    image={selectedProject.image}
+                />
+            )}
         </section>
     );
 };

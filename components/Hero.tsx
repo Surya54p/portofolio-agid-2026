@@ -7,9 +7,22 @@ import ButtonTertiary from "./ButtonTertiary";
 
 const Hero = () => {
     return (
-        <section className="relative flex min-h-screen flex-col items-center justify-center bg-[#0f0f0f] px-4 text-center">
-            {/* Background Decorative Element (Subtle Gradient) */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(40,40,40,0.5)_0%,transparent_70%)] pointer-events-none"></div>
+        <section className="relative flex min-h-screen flex-col items-center justify-center bg-[#0f0f0f] px-4 text-center overflow-hidden">
+            {/* Minimalist Decorations */}
+            <div className="absolute inset-0 pointer-events-none">
+                {/* Dot Grid */}
+                <div
+                    className="absolute inset-0 opacity-[0.15]"
+                    style={{
+                        backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)',
+                        backgroundSize: '32px 32px'
+                    }}
+                ></div>
+
+                {/* Soft Radial Glows */}
+                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#0D6EFD]/10 blur-[120px] rounded-full"></div>
+                <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-[#0D6EFD]/5 blur-[100px] rounded-full"></div>
+            </div>
 
             <div className="relative z-10 max-w-3xl">
                 <h2 className="mb-2 text-xl font-light italic tracking-wide text-gray-300 md:text-2xl drop-shadow-sm">
@@ -28,6 +41,11 @@ const Hero = () => {
                     <ButtonPrimary>Link Hub</ButtonPrimary>
                     <ButtonSecondary>Work Galery</ButtonSecondary>
                 </div>
+            </div>
+
+            {/* Scroll Indicator */}
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
+                <div className="w-px h-12 bg-linear-to-b from-white/40 to-transparent"></div>
             </div>
 
             {/* Subtle bottom fade */}

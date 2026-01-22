@@ -27,18 +27,18 @@ const MyJourney = () => {
     return (
         <section className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-semibold mb-16">My Journey</h2>
+                <h2 className="text-3xl md:text-4xl font-normal mb-16">My Journey</h2>
 
                 <div className="space-y-12">
                     {events.map((event, index) => (
                         <div key={index} className="group relative pl-8 md:pl-0">
                             {/* Horizontal timeline for desktop, vertical for mobile */}
                             <div className="md:grid md:grid-cols-[150px_1fr] md:gap-12 items-start">
-                                <div className="text-xl md:text-2xl font-bold text-gray-500 group-hover:text-white transition-colors duration-300">
+                                <div className="text-xl md:text-2xl font-normal text-gray-500 group-hover:text-white transition-colors duration-300">
                                     {event.year} —
                                 </div>
                                 <div className="mt-2 md:mt-0">
-                                    <h3 className="text-xl md:text-2xl font-bold mb-4">{event.title}</h3>
+                                    <h3 className="text-xl md:text-2xl font-normal mb-4">{event.title}</h3>
                                     <p className="text-gray-400 leading-relaxed text-sm md:text-base max-w-4xl">
                                         {event.description}
                                     </p>

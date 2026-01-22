@@ -16,21 +16,17 @@ const Hero = () => {
                     Welcome to my personal
                 </h2>
 
-                <h1 className="mb-6 text-5xl font-bold tracking-tight text-white md:text-7xl lg:text-8xl drop-shadow-md">
+                <h1 className="mb-6 text-5xl font-normal tracking-tight text-white md:text-7xl lg:text-8xl drop-shadow-md italic">
                     Portofolio
                 </h1>
 
-                <p className="mb-10 text-sm font-light tracking-widest text-gray-400 uppercase md:text-base">
+                <p className="mb-10 text-sm font-light tracking-widest text-gray-400 md:text-base">
                     In this website you will find some of my work
                 </p>
 
                 <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
                     <ButtonPrimary>Link Hub</ButtonPrimary>
                     <ButtonSecondary>Work Galery</ButtonSecondary>
-                </div>
-
-                <div className="mt-8">
-                    <ButtonTertiary>Explore More</ButtonTertiary>
                 </div>
             </div>
 

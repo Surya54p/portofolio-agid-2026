@@ -5,20 +5,20 @@ const AboutMe = () => {
     return (
         <section className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-semibold mb-12">About me</h2>
+                <h2 className="text-3xl md:text-4xl font-normal mb-12">About me</h2>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     {/* Left Column: Content */}
                     <div className="space-y-10">
                         <div>
-                            <h3 className="text-lg font-bold mb-3">What I Do</h3>
+                            <h3 className="text-lg font-normal mb-3">What I Do</h3>
                             <p className="text-gray-300 leading-relaxed text-sm md:text-base">
                                 Build scalable web applications and data-driven solutions with a focus on clean architecture and performance.
                             </p>
                         </div>
 
                         <div>
-                            <h3 className="text-lg font-bold mb-3">Current Focus</h3>
+                            <h3 className="text-lg font-normal mb-3">Current Focus</h3>
                             <ul className="text-gray-300 space-y-2 text-sm md:text-base">
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
@@ -36,7 +36,7 @@ const AboutMe = () => {
                         </div>
 
                         <div>
-                            <h3 className="text-lg font-bold mb-3">Highlights</h3>
+                            <h3 className="text-lg font-normal mb-3">Highlights</h3>
                             <ul className="text-gray-300 space-y-2 text-sm md:text-base">
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
@@ -54,7 +54,7 @@ const AboutMe = () => {
                         </div>
 
                         <div>
-                            <h3 className="text-lg font-bold mb-3">How I Work</h3>
+                            <h3 className="text-lg font-normal mb-3">How I Work</h3>
                             <ul className="text-gray-300 space-y-2 text-sm md:text-base">
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
@@ -76,7 +76,7 @@ const AboutMe = () => {
                         </div>
 
                         <div>
-                            <h3 className="text-lg font-bold mb-3">Services</h3>
+                            <h3 className="text-lg font-normal mb-3">Services</h3>
                             <ul className="text-gray-300 space-y-2 text-sm md:text-base">
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
@@ -98,7 +98,7 @@ const AboutMe = () => {
                         </div>
 
                         <div>
-                            <h3 className="text-lg font-bold mb-3">Availability</h3>
+                            <h3 className="text-lg font-normal mb-3">Availability</h3>
                             <ul className="text-gray-300 space-y-2 text-sm md:text-base">
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
@@ -114,7 +114,7 @@ const AboutMe = () => {
 
                     {/* Right Column: Images */}
                     <div className="space-y-6">
-                        <div className="relative aspect-4/3 rounded-2xl overflow-hidden bg-gray-800 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+                        <div className="relative aspect-4/3 rounded-[10px] overflow-hidden bg-gray-800 shadow-2xl transition-transform duration-500">
                             <Image
                                 src="/images/landscape_1.png"
                                 alt="Landscape 1"
@@ -122,7 +122,7 @@ const AboutMe = () => {
                                 className="object-cover"
                             />
                         </div>
-                        <div className="relative aspect-4/3 rounded-2xl overflow-hidden bg-gray-800 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+                        <div className="relative aspect-4/3 rounded-[10px] overflow-hidden bg-gray-800 shadow-2xl transition-transform duration-500">
                             <Image
                                 src="/images/landscape_2.png"
                                 alt="Landscape 2"

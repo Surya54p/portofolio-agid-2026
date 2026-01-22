@@ -2,35 +2,35 @@ import React from "react";
 import Image from "next/image";
 import ButtonTertiary from "./ButtonTertiary";
 
-const WorkGallery = () => {
-    const projects = Array(8).fill({
+const Certificates = () => {
+    const certs = Array(8).fill({
         title: "Website 1",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-        image: "/images/project_1.png"
+        image: "/images/certificate_1.png"
     });
 
     return (
         <section className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-normal mb-12">My Work Galery</h2>
+                <h2 className="text-3xl md:text-4xl font-normal mb-12">My Certificate</h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {projects.map((project, index) => (
+                    {certs.map((cert, index) => (
                         <div key={index} className="group bg-[#161616] rounded-[10px] overflow-hidden border border-gray-800 transition-all duration-300 hover:border-gray-600 shadow-lg">
-                            <div className="relative aspect-video overflow-hidden">
+                            <div className="relative aspect-4/3 overflow-hidden">
                                 <Image
-                                    src={project.image}
-                                    alt={project.title}
+                                    src={cert.image}
+                                    alt={cert.title}
                                     fill
                                     className="object-cover transition-transform duration-500"
                                 />
                                 {/* Overlay gradient */}
-                                <div className="absolute inset-0 bg-linear-to-t from-[#161616] to-transparent opacity-60"></div>
+                                <div className="absolute inset-0 bg-linear-to-t from-[#161616] to-transparent opacity-40"></div>
                             </div>
                             <div className="p-5">
-                                <h3 className="text-lg font-normal mb-2 group-hover:text-blue-400 transition-colors duration-300">{project.title}</h3>
+                                <h3 className="text-lg font-normal mb-2 group-hover:text-blue-400 transition-colors duration-300">{cert.title}</h3>
                                 <p className="text-gray-400 text-xs leading-relaxed line-clamp-3">
-                                    {project.description}
+                                    {cert.description}
                                 </p>
                             </div>
                         </div>
@@ -45,4 +45,4 @@ const WorkGallery = () => {
     );
 };
 
-export default WorkGallery;
+export default Certificates;

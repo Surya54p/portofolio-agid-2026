@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const AboutMe = () => {
     return (
-        <section className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white">
+        <section id="about-me" className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-normal mb-12">About me</h2>
 
@@ -113,10 +113,10 @@ const AboutMe = () => {
                     </div>
 
                     {/* Right Column: Images */}
-                    <div className="space-y-6">
+                    <div className="space-y-6 hidden md:block">
                         <div className="relative aspect-4/3 rounded-[10px] overflow-hidden bg-gray-800 shadow-2xl transition-transform duration-500">
                             <Image
-                                src="/images/landscape_1.png"
+                                src="/images/profile___1.png"
                                 alt="Landscape 1"
                                 fill
                                 className="object-cover"
@@ -124,7 +124,7 @@ const AboutMe = () => {
                         </div>
                         <div className="relative aspect-4/3 rounded-[10px] overflow-hidden bg-gray-800 shadow-2xl transition-transform duration-500">
                             <Image
-                                src="/images/landscape_2.png"
+                                src="/images/profile___2.png"
                                 alt="Landscape 2"
                                 fill
                                 className="object-cover"

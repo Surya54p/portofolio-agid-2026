@@ -69,7 +69,7 @@ const Skills = () => {
     const displaySkills = [...skillList, ...skillList.slice(0, 3)];
 
     return (
-        <section className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white">
+        <section id="skills" className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-normal mb-12">What is my skill set?</h2>
 

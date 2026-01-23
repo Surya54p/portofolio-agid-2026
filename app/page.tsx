@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import ProfileSection from "@/components/ProfileSection";
 import AboutMe from "@/components/AboutMe";
 import MyJourney from "@/components/MyJourney";
 import WorkGallery from "@/components/WorkGallery";
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <ProfileSection />
       <AboutMe />
       <MyJourney />
       <WorkGallery />

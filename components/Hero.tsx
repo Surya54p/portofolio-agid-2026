@@ -6,6 +6,7 @@ import ButtonSecondary from "./ButtonSecondary";
 import ButtonTertiary from "./ButtonTertiary";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import CircularGallery from "./CircularGallery";
 
 const Hero = () => {
     const container = useRef(null);
@@ -17,14 +18,13 @@ const Hero = () => {
             .from(".hero-title", { opacity: 0, y: 50 }, "-=0.7")
             .from(".hero-desc", { opacity: 0, y: 20 }, "-=0.8")
             .from(".hero-buttons", { opacity: 0, y: 20, scale: 0.95 }, "-=0.8")
+            .from(".hero-gallery", { opacity: 0, y: 30 }, "-=0.6")
             .from(".hero-scroll", { opacity: 0, height: 0 }, "-=0.5");
     }, { scope: container });
 
     return (
         <section ref={container} className="relative flex min-h-screen flex-col items-center justify-center bg-[#0f0f0f] px-4 text-center overflow-hidden">
-            {/* Minimalist Decorations */}
             <div className="absolute inset-0 pointer-events-none">
-                {/* Dot Grid */}
                 <div
                     className="absolute inset-0 opacity-[0.15]"
                     style={{
@@ -38,7 +38,7 @@ const Hero = () => {
                 <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-[#0D6EFD]/5 blur-[100px] rounded-full"></div>
             </div>
 
-            <div className="relative z-10 max-w-3xl">
+            <div className="relative z-10 max-w-3xl w-full">
                 <h2 className="hero-welcome mb-2 text-xl font-light italic tracking-wide text-gray-300 md:text-2xl drop-shadow-sm">
                     Welcome to my personal
                 </h2>
@@ -54,6 +54,25 @@ const Hero = () => {
                 <div className="hero-buttons flex flex-col items-center justify-center gap-6 sm:flex-row">
                     <ButtonPrimary>Link Hub</ButtonPrimary>
                     <ButtonSecondary>Work Galery</ButtonSecondary>
+                </div>
+
+                {/* Circular Gallery */}
+                <div className="hero-gallery" style={{ height: '370px', position: 'relative' }}>
+                    <CircularGallery
+                        bend={1}
+                        textColor="#ffffff"
+                        borderRadius={0.05}
+                        scrollSpeed={2}
+                        scrollEase={0.05}
+                        items={[
+                            { image: '/images/profile___1.png' },
+                            { image: '/images/profile___2.png' },
+                            { image: '/images/landscape_1.png' },
+                            { image: '/images/landscape_2.png' },
+                            { image: '/images/project_1.png' },
+                            { image: '/images/certificate_1.png' },
+                        ]}
+                    />
                 </div>
             </div>
 

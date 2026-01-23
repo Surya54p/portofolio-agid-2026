@@ -1,23 +1,59 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutMe = () => {
+    const sectionRef = useRef(null);
+
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top 85%",
+                once: true,
+            }
+        });
+
+        tl.fromTo(".about-title",
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+        )
+            .fromTo(".about-item",
+                { opacity: 0, x: -30 },
+                { opacity: 1, x: 0, duration: 0.6, stagger: 0.1, ease: "power3.out" },
+                "-=0.4"
+            )
+            .fromTo(".about-image",
+                { opacity: 0, x: 50 },
+                { opacity: 1, x: 0, duration: 1, stagger: 0.2, ease: "power3.out" },
+                "-=1"
+            );
+
+        ScrollTrigger.refresh();
+    }, { scope: sectionRef });
+
     return (
-        <section id="about-me" className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white">
+        <section id="about-me" ref={sectionRef} className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white overflow-hidden">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-normal mb-12">About me</h2>
+                <h2 className="about-title text-3xl md:text-4xl font-normal mb-12">About me</h2>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     {/* Left Column: Content */}
                     <div className="space-y-10">
-                        <div>
+                        <div className="about-item">
                             <h3 className="text-lg font-normal mb-3">What I Do</h3>
                             <p className="text-gray-300 leading-relaxed text-sm md:text-base">
                                 Build scalable web applications and data-driven solutions with a focus on clean architecture and performance.
                             </p>
                         </div>
 
-                        <div>
+                        <div className="about-item">
                             <h3 className="text-lg font-normal mb-3">Current Focus</h3>
                             <ul className="text-gray-300 space-y-2 text-sm md:text-base">
                                 <li className="flex items-start">
@@ -35,7 +71,7 @@ const AboutMe = () => {
                             </ul>
                         </div>
 
-                        <div>
+                        <div className="about-item">
                             <h3 className="text-lg font-normal mb-3">Highlights</h3>
                             <ul className="text-gray-300 space-y-2 text-sm md:text-base">
                                 <li className="flex items-start">
@@ -53,7 +89,7 @@ const AboutMe = () => {
                             </ul>
                         </div>
 
-                        <div>
+                        <div className="about-item">
                             <h3 className="text-lg font-normal mb-3">How I Work</h3>
                             <ul className="text-gray-300 space-y-2 text-sm md:text-base">
                                 <li className="flex items-start">
@@ -75,7 +111,7 @@ const AboutMe = () => {
                             </ul>
                         </div>
 
-                        <div>
+                        <div className="about-item">
                             <h3 className="text-lg font-normal mb-3">Services</h3>
                             <ul className="text-gray-300 space-y-2 text-sm md:text-base">
                                 <li className="flex items-start">
@@ -97,7 +133,7 @@ const AboutMe = () => {
                             </ul>
                         </div>
 
-                        <div>
+                        <div className="about-item">
                             <h3 className="text-lg font-normal mb-3">Availability</h3>
                             <ul className="text-gray-300 space-y-2 text-sm md:text-base">
                                 <li className="flex items-start">
@@ -114,7 +150,7 @@ const AboutMe = () => {
 
                     {/* Right Column: Images */}
                     <div className="space-y-6 hidden md:block">
-                        <div className="relative aspect-4/3 rounded-[10px] overflow-hidden bg-gray-800 shadow-2xl transition-transform duration-500">
+                        <div className="about-image relative aspect-4/3 rounded-[10px] overflow-hidden bg-gray-800 shadow-2xl transition-transform duration-500">
                             <Image
                                 src="/images/profile___1.png"
                                 alt="Landscape 1"
@@ -122,7 +158,7 @@ const AboutMe = () => {
                                 className="object-cover"
                             />
                         </div>
-                        <div className="relative aspect-4/3 rounded-[10px] overflow-hidden bg-gray-800 shadow-2xl transition-transform duration-500">
+                        <div className="about-image relative aspect-4/3 rounded-[10px] overflow-hidden bg-gray-800 shadow-2xl transition-transform duration-500">
                             <Image
                                 src="/images/profile___2.png"
                                 alt="Landscape 2"

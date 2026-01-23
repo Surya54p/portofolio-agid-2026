@@ -1,17 +1,51 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import ButtonPrimary from "./ButtonPrimary";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
+    const sectionRef = useRef(null);
+
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top 85%",
+                once: true,
+            }
+        });
+
+        tl.fromTo(".contact-title",
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+        )
+            .fromTo(".contact-form",
+                { opacity: 0, x: -50 },
+                { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" },
+                "-=0.4"
+            )
+            .fromTo(".contact-options",
+                { opacity: 0, x: 50 },
+                { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" },
+                "-=0.8"
+            );
+
+        ScrollTrigger.refresh();
+    }, { scope: sectionRef });
+
     return (
-        <section id="contact" className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white">
+        <section id="contact" ref={sectionRef} className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white overflow-hidden">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-3xl md:text-4xl  mb-12">Interested in working together?</h2>
+                <h2 className="contact-title text-3xl md:text-4xl  mb-12">Interested in working together?</h2>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     {/* Left Side: Contact Form */}
-                    <div className="space-y-6">
+                    <div className="contact-form space-y-6">
                         <p className="text-gray-400 text-sm">Feel free to reach out.</p>
                         <form className="space-y-4">
                             <div>
@@ -37,7 +71,7 @@ const Contact = () => {
                     </div>
 
                     {/* Right Side: Other Options */}
-                    <div className="space-y-10">
+                    <div className="contact-options space-y-10">
                         <h3 className="text-sm font-medium text-gray-400">Other option</h3>
 
                         <div className="space-y-8">

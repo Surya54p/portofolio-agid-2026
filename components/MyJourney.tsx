@@ -1,6 +1,15 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const MyJourney = () => {
+    const sectionRef = useRef(null);
+
     const events = [
         {
             year: "2021",
@@ -24,14 +33,36 @@ const MyJourney = () => {
         }
     ];
 
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top 85%",
+                once: true,
+            }
+        });
+
+        tl.fromTo(".journey-title",
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+        )
+            .fromTo(".journey-event",
+                { opacity: 0, x: -50 },
+                { opacity: 1, x: 0, duration: 0.8, stagger: 0.2, ease: "power3.out" },
+                "-=0.4"
+            );
+
+        ScrollTrigger.refresh();
+    }, { scope: sectionRef });
+
     return (
-        <section id="my-journey" className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white">
+        <section id="my-journey" ref={sectionRef} className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white overflow-hidden">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-normal mb-16">My Journey</h2>
+                <h2 className="journey-title text-3xl md:text-4xl font-normal mb-16">My Journey</h2>
 
                 <div className="space-y-12">
                     {events.map((event, index) => (
-                        <div key={index} className="group relative pl-8 md:pl-0">
+                        <div key={index} className="journey-event group relative pl-8 md:pl-0">
                             {/* Horizontal timeline for desktop, vertical for mobile */}
                             <div className="md:grid md:grid-cols-[150px_1fr] md:gap-12 items-start">
                                 <div className="text-xl md:text-2xl font-normal text-gray-500 group-hover:text-white transition-colors duration-300">

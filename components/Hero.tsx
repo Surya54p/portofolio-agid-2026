@@ -1,13 +1,27 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import ButtonPrimary from "./ButtonPrimary";
 import ButtonSecondary from "./ButtonSecondary";
 import ButtonTertiary from "./ButtonTertiary";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Hero = () => {
+    const container = useRef(null);
+
+    useGSAP(() => {
+        const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 } });
+
+        tl.from(".hero-welcome", { opacity: 0, y: 30, delay: 0.2 })
+            .from(".hero-title", { opacity: 0, y: 50 }, "-=0.7")
+            .from(".hero-desc", { opacity: 0, y: 20 }, "-=0.8")
+            .from(".hero-buttons", { opacity: 0, y: 20, scale: 0.95 }, "-=0.8")
+            .from(".hero-scroll", { opacity: 0, height: 0 }, "-=0.5");
+    }, { scope: container });
+
     return (
-        <section className="relative flex min-h-screen flex-col items-center justify-center bg-[#0f0f0f] px-4 text-center overflow-hidden">
+        <section ref={container} className="relative flex min-h-screen flex-col items-center justify-center bg-[#0f0f0f] px-4 text-center overflow-hidden">
             {/* Minimalist Decorations */}
             <div className="absolute inset-0 pointer-events-none">
                 {/* Dot Grid */}
@@ -25,26 +39,26 @@ const Hero = () => {
             </div>
 
             <div className="relative z-10 max-w-3xl">
-                <h2 className="mb-2 text-xl font-light italic tracking-wide text-gray-300 md:text-2xl drop-shadow-sm">
+                <h2 className="hero-welcome mb-2 text-xl font-light italic tracking-wide text-gray-300 md:text-2xl drop-shadow-sm">
                     Welcome to my personal
                 </h2>
 
-                <h1 className="mb-6 text-5xl font-normal tracking-tight text-white md:text-7xl lg:text-8xl drop-shadow-md italic">
+                <h1 className="hero-title mb-6 text-5xl font-normal tracking-tight text-white md:text-7xl lg:text-8xl drop-shadow-md italic">
                     Portofolio
                 </h1>
 
-                <p className="mb-10 text-sm font-light tracking-widest text-gray-400 md:text-base">
+                <p className="hero-desc mb-10 text-sm font-light tracking-widest text-gray-400 md:text-base">
                     In this website you will find some of my work
                 </p>
 
-                <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
+                <div className="hero-buttons flex flex-col items-center justify-center gap-6 sm:flex-row">
                     <ButtonPrimary>Link Hub</ButtonPrimary>
                     <ButtonSecondary>Work Galery</ButtonSecondary>
                 </div>
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
+            <div className="hero-scroll absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
                 <div className="w-px h-12 bg-linear-to-b from-white/40 to-transparent"></div>
             </div>
 

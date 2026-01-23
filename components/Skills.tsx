@@ -1,7 +1,16 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import ButtonTertiary from "./ButtonTertiary";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
+    const sectionRef = useRef(null);
+
     const skillList = [
         {
             name: "React JS",
@@ -68,15 +77,42 @@ const Skills = () => {
     // Duplicating some to match the grid of 9 as seen in the image
     const displaySkills = [...skillList, ...skillList.slice(0, 3)];
 
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top 85%",
+                once: true,
+            }
+        });
+
+        tl.fromTo(".skills-title",
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+        )
+            .fromTo(".skill-card",
+                { opacity: 0, y: 30 },
+                { opacity: 1, y: 0, duration: 0.6, stagger: 0.05, ease: "power3.out" },
+                "-=0.4"
+            )
+            .fromTo(".skills-footer",
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
+                "-=0.4"
+            );
+
+        ScrollTrigger.refresh();
+    }, { scope: sectionRef });
+
     return (
-        <section id="skills" className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white">
+        <section id="skills" ref={sectionRef} className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white overflow-hidden">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-normal mb-12">What is my skill set?</h2>
+                <h2 className="skills-title text-3xl md:text-4xl font-normal mb-12">What is my skill set?</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {displaySkills.map((skill, index) => (
-                        <div key={index} className="flex items-center gap-6 p-1 bg-[#161616] rounded-[10px] border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:bg-[#1c1c1c] group">
-                            <div className="shrink-0 w-24 h-24 bg-[#0a0a0a] rounded-[10px] flex items-center justify-center transition-transform duration-300">
+                        <div key={index} className="skill-card flex items-center gap-6 p-1 bg-[#161616] rounded-[10px] border border-gray-800 transition-all duration-300 hover:border-blue-500/50 hover:bg-[#1c1c1c] group">
+                            <div className="shrink-0 w-24 h-24 bg-[#0a0a0a] rounded-[10px] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                                 {skill.icon}
                             </div>
                             <div className="grow py-4 pr-6">
@@ -89,7 +125,7 @@ const Skills = () => {
                     ))}
                 </div>
 
-                <div className="mt-16 text-center">
+                <div className="skills-footer mt-16 text-center">
                     <ButtonTertiary className="text-base">Show more</ButtonTertiary>
                 </div>
             </div>

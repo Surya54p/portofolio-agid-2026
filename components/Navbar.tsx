@@ -3,6 +3,11 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown, Rocket, Briefcase, GraduationCap, Code } from "lucide-react";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+// Register GSAP plugin
+gsap.registerPlugin(ScrollToPlugin);
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,6 +24,26 @@ const Navbar = () => {
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
     const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
+
+    // GSAP smooth scroll handler
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
+        const targetId = href.replace('#', '');
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            gsap.to(window, {
+                duration: 1.2,
+                scrollTo: {
+                    y: targetElement,
+                    offsetY: 80 // Offset untuk navbar
+                },
+                ease: "power2.inOut"
+            });
+            setIsMenuOpen(false);
+            setIsDropdownOpen(false);
+        }
+    };
 
     const dropdownItems = [
         { name: "My Journey", icon: <Rocket className="w-4 h-4" />, href: "#my-journey" },
@@ -48,6 +73,7 @@ const Navbar = () => {
                     <div className="hidden md:flex items-center gap-10">
                         <Link
                             href="#about-me"
+                            onClick={(e) => handleNavClick(e, "#about-me")}
                             className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
                         >
                             About me
@@ -74,6 +100,7 @@ const Navbar = () => {
                                         <Link
                                             key={item.name}
                                             href={item.href}
+                                            onClick={(e) => handleNavClick(e, item.href)}
                                             className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors text-gray-400 hover:text-white"
                                         >
                                             <span className="text-blue-500">{item.icon}</span>
@@ -86,6 +113,7 @@ const Navbar = () => {
 
                         <Link
                             href="#contact"
+                            onClick={(e) => handleNavClick(e, "#contact")}
                             className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-full transition-all hover:shadow-lg hover:shadow-blue-600/20 active:scale-95"
                         >
                             Contact
@@ -127,7 +155,7 @@ const Navbar = () => {
                     <div className="flex flex-col gap-8 text-center">
                         <Link
                             href="#about-me"
-                            onClick={toggleMenu}
+                            onClick={(e) => handleNavClick(e, "#about-me")}
                             className="text-2xl font-medium text-white pb-2 hover:text-blue-500 transition-colors"
                         >
                             About me
@@ -140,7 +168,7 @@ const Navbar = () => {
                                     <Link
                                         key={item.name}
                                         href={item.href}
-                                        onClick={toggleMenu}
+                                        onClick={(e) => handleNavClick(e, item.href)}
                                         className="flex items-center justify-center gap-4 text-xl text-gray-400 hover:text-white transition-colors"
                                     >
                                         <span className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-blue-500">
@@ -154,7 +182,7 @@ const Navbar = () => {
 
                         <Link
                             href="#contact"
-                            onClick={toggleMenu}
+                            onClick={(e) => handleNavClick(e, "#contact")}
                             className="mt-2 px-8 py-4 bg-blue-600 text-white text-center rounded-2xl font-medium active:scale-95 transition-transform shadow-lg shadow-blue-600/20"
                         >
                             Get in Touch

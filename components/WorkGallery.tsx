@@ -101,6 +101,8 @@ const WorkGallery = () => {
                     title={selectedProject.title}
                     description={selectedProject.description}
                     image={selectedProject.image}
+                    category={selectedProject.category}
+                    organization={selectedProject.organization}
                 />
             )}
         </section>

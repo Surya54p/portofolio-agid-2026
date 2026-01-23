@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom"; // IMPORT INI PENTING
 import Image from "next/image";
 import { X } from "lucide-react";
 
@@ -10,29 +11,39 @@ interface ModalProps {
     title: string;
     description: string;
     image: string;
+    category: string;
+    organization: string;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, description, image }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, description, image, category, organization }) => {
+    const [mounted, setMounted] = useState(false);
+
     useEffect(() => {
+        setMounted(true);
+
         if (isOpen) {
             document.body.style.overflow = "hidden";
         } else {
             document.body.style.overflow = "unset";
         }
+
         return () => {
             document.body.style.overflow = "unset";
         };
     }, [isOpen]);
 
-    if (!isOpen) return null;
+    // Jika belum dimount (SSR) atau tidak open, jangan render apa-apa
+    if (!mounted || !isOpen) return null;
 
-    return (
-        <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6"
-            onClick={onClose}
-        >
+    // GUNAKAN createPortal UNTUK MEMINDAHKAN MODAL KE BODY
+    return createPortal(
+        <div className="fixed inset-0 z-99 flex items-center justify-center p-4 md:p-6">
+
             {/* Backdrop */}
-            <div className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity" />
+            <div
+                className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
+                onClick={onClose}
+            />
 
             {/* Modal Content */}
             <div
@@ -42,38 +53,45 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, description, imag
                 {/* Close Button */}
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/80 rounded-full text-white transition-colors border border-gray-700"
+                    className="absolute top-4 right-4 z-20 p-2 bg-black/50 hover:bg-black/80 rounded-full text-white border border-gray-700 cursor-pointer"
                 >
                     <X size={20} />
                 </button>
 
                 {/* Left side: Image */}
-                <div className="relative w-full md:w-1/2 aspect-video md:aspect-auto">
+                <div className="relative w-full md:w-1/2 h-64 md:h-auto bg-gray-900 border-b md:border-b-0 md:border-r border-gray-800">
                     <Image
                         src={image}
                         alt={title}
                         fill
                         className="object-cover"
                         priority
+                        sizes="(max-width: 768px) 100vw, 50vw"
                     />
                 </div>
 
                 {/* Right side: Info */}
-                <div className="flex-1 p-6 md:p-10 flex flex-col justify-center bg-[#161616]">
-                    <h2 className="text-2xl md:text-3xl font-normal text-white mb-4">{title}</h2>
+                <div className="flex-1 p-6 md:p-10 flex flex-col justify-center bg-[#161616] overflow-y-auto">
+                    <h2 className="text-2xl md:text-3xl font-normal text-white mb-4 leading-tight">{title}</h2>
+
                     <div className="w-12 h-1 bg-blue-500 mb-6 rounded-full" />
-                    <p className="text-gray-400 text-sm md:text-base leading-relaxed">
+
+                    <div className="space-y-1 mb-4">
+                        <span className="text-[10px] uppercase tracking-wider text-blue-400 font-semibold block">
+                            {category}
+                        </span>
+                        <span className="text-[10px] uppercase tracking-wider text-gray-300 block">
+                            {organization}
+                        </span>
+                    </div>
+
+                    <p className="text-gray-400 text-sm leading-relaxed whitespace-pre-line">
                         {description}
                     </p>
-
-                    <div className="mt-8 flex gap-4">
-                        <button className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-sm font-medium transition-colors">
-                            View Project
-                        </button>
-                    </div>
                 </div>
             </div>
-        </div>
+        </div>,
+        document.body // Target Portal: Langsung ke elemen <body>
     );
 };
 

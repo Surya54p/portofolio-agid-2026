@@ -37,19 +37,19 @@ const MyJourney = () => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: sectionRef.current,
-                start: "top 85%",
+                start: "top bottom-=100",
                 once: true,
             }
         });
 
         tl.fromTo(".journey-title",
-            { opacity: 0, y: 30 },
-            { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+            { opacity: 0, y: 15 },
+            { opacity: 1, y: 0, duration: 0.4, ease: "power1.out" }
         )
             .fromTo(".journey-event",
-                { opacity: 0, x: -50 },
-                { opacity: 1, x: 0, duration: 0.8, stagger: 0.2, ease: "power3.out" },
-                "-=0.4"
+                { opacity: 0, x: -30 },
+                { opacity: 1, x: 0, duration: 0.5, stagger: 0.1, ease: "power1.out" },
+                "-=0.3"
             );
 
         ScrollTrigger.refresh();

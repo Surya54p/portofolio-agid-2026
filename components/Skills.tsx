@@ -81,24 +81,25 @@ const Skills = () => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: sectionRef.current,
-                start: "top 85%",
+                start: "top bottom-=300",
                 once: true,
             }
         });
 
+
         tl.fromTo(".skills-title",
-            { opacity: 0, y: 30 },
-            { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+            { opacity: 0, y: 15 },
+            { opacity: 1, y: 0, duration: 0.4, ease: "power1.out" }
         )
             .fromTo(".skill-card",
-                { opacity: 0, y: 30 },
-                { opacity: 1, y: 0, duration: 0.6, stagger: 0.05, ease: "power3.out" },
-                "-=0.4"
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 0.4, stagger: 0.03, ease: "power1.out" },
+                "-=0.35"
             )
             .fromTo(".skills-footer",
-                { opacity: 0, y: 20 },
-                { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-                "-=0.4"
+                { opacity: 0, y: 10 },
+                { opacity: 1, y: 0, duration: 0.4, ease: "power1.out" },
+                "-=0.35"
             );
 
         ScrollTrigger.refresh();
@@ -111,8 +112,8 @@ const Skills = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {displaySkills.map((skill, index) => (
-                        <div key={index} className="skill-card flex items-center gap-6 p-1 bg-[#161616] rounded-[10px] border border-gray-800 transition-all duration-300 hover:border-blue-500/50 hover:bg-[#1c1c1c] group">
-                            <div className="shrink-0 w-24 h-24 bg-[#0a0a0a] rounded-[10px] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                        <div key={index} className="skill-card flex items-center gap-6 p-1 bg-[#161616] rounded-[10px] border border-gray-800 shadow-lg cursor-pointer transition-colors duration-300 hover:border-blue-500/50 hover:bg-[#1c1c1c] group">
+                            <div className="shrink-0 w-24 h-24 bg-[#0a0a0a] rounded-[10px] flex items-center justify-center">
                                 {skill.icon}
                             </div>
                             <div className="grow py-4 pr-6">

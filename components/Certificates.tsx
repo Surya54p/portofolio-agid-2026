@@ -31,27 +31,28 @@ const Certificates = () => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: sectionRef.current,
-                start: "top 85%",
+                start: "top bottom-=300",
                 once: true,
+                // markers: true,
+
             }
         });
 
         tl.fromTo(".cert-title",
-            { opacity: 0, y: 30 },
-            { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+            { opacity: 0, y: 15 },
+            { opacity: 1, y: 0, duration: 0.4, ease: "power1.out" }
         )
             .fromTo(".cert-card",
-                { opacity: 0, y: 40, scale: 0.9 },
-                { opacity: 1, y: 0, scale: 1, duration: 0.6, stagger: 0.05, ease: "power3.out" },
-                "-=0.4"
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 0.4, stagger: 0.03, ease: "power1.out" },
+                "-=0.35"
             )
             .fromTo(".cert-footer",
-                { opacity: 0, y: 20 },
-                { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-                "-=0.4"
+                { opacity: 0, y: 10 },
+                { opacity: 1, y: 0, duration: 0.4, ease: "power1.out" },
+                "-=0.35"
             );
 
-        // Refresh ScrollTrigger to ensure correct positions after rendering
         ScrollTrigger.refresh();
     }, { scope: sectionRef });
 
@@ -65,14 +66,14 @@ const Certificates = () => {
                         <div
                             key={index}
                             onClick={() => openModal(cert)}
-                            className="cert-card bg-[#161616] rounded-[10px] overflow-hidden border border-gray-800 transition-all duration-300 shadow-lg cursor-pointer hover:border-blue-500/50"
+                            className="cert-card bg-[#161616] rounded-[10px] overflow-hidden border border-gray-800 transition-[border-color,background-color] duration-300 shadow-lg cursor-pointer hover:border-blue-500/50"
                         >
                             <div className="relative aspect-4/3 overflow-hidden">
                                 <Image
                                     src={cert.image}
                                     alt={cert.title}
                                     fill
-                                    className="object-cover transition-transform duration-500 hover:scale-110"
+                                    className="object-cover"
                                 />
                                 {/* Overlay gradient */}
                                 <div className="absolute inset-0 bg-linear-to-t from-[#161616] to-transparent opacity-40"></div>

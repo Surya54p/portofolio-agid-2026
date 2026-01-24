@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import ProfileSection from "@/components/ProfileSection";
 import AboutMe from "@/components/AboutMe";
 import MyJourney from "@/components/MyJourney";
-import WorkGallery from "@/components/WorkGallery";
+// import WorkGallery from "@/components/WorkGallery";
 import Certificates from "@/components/Certificates";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";

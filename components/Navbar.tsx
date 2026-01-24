@@ -47,7 +47,7 @@ const Navbar = () => {
 
     const dropdownItems = [
         { name: "My Journey", icon: <Rocket className="w-4 h-4" />, href: "#my-journey" },
-        { name: "Work Gallery", icon: <Briefcase className="w-4 h-4" />, href: "#work-gallery" },
+        // { name: "Work Gallery", icon: <Briefcase className="w-4 h-4" />, href: "#work-gallery" },
         { name: "Certificates", icon: <GraduationCap className="w-4 h-4" />, href: "#certificates" },
         { name: "Skills", icon: <Code className="w-4 h-4" />, href: "#skills" },
     ];

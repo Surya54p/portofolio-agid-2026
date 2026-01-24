@@ -43,7 +43,7 @@ export default function Home() {
             <ProfileSection />
             <AboutMe />
             <MyJourney />
-            <WorkGallery />
+            {/* <WorkGallery /> */}
             <Certificates />
             <Skills />
             <Contact />

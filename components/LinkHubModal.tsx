@@ -7,6 +7,7 @@ import { X } from "lucide-react";
 interface LinkItem {
     label: string;
     url: string;
+    downloadable?: boolean;
 }
 
 interface Section {
@@ -40,23 +41,16 @@ const LinkHubModal: React.FC<LinkHubModalProps> = ({ isOpen, onClose }) => {
         {
             title: "Social Media",
             links: [
-                { label: "LinkedIn", url: "#" },
+                { label: "LinkedIn", url: "https://www.linkedin.com/in/surya-ario-pratama-354431285" },
                 { label: "Instagram", url: "https://www.instagram.com/surya4p_?igsh=MWF2ZjRyMWV5b3Q3Zg==" },
-                { label: "Twitter / X", url: "#" },
                 { label: "Threads", url: "#" },
-                { label: "Facebook", url: "#" },
-                { label: "TikTok", url: "#" },
             ],
         },
         {
             title: "Projects Hub",
             links: [
-                { label: "GitHub", url: "#" },
-                { label: "Behance", url: "#" },
-                { label: "Dribbble", url: "#" },
-                { label: "Figma", url: "#" },
-                { label: "GitLab", url: "#" },
-                { label: "Vercel", url: "#" },
+                { label: "GitHub", url: "https://github.com/Surya54p" },
+                { label: "Figma", url: "https://www.figma.com/design/ToUhnCpidtLDMJ5UBB7J0X/My-work?node-id=9-57&t=ZwheJu2n1K48FT5t-1" },
             ],
         },
         {
@@ -64,73 +58,24 @@ const LinkHubModal: React.FC<LinkHubModalProps> = ({ isOpen, onClose }) => {
             links: [
                 { label: "Email Me", url: "#" },
                 { label: "WhatsApp", url: "#" },
-                { label: "Telegram", url: "#" },
-                { label: "Resume", url: "#" },
-                { label: "Discord", url: "#" },
-                { label: "Notion", url: "#" },
+                {
+                    label: "Curiculum Vitae",
+                    url: "/file/cv-surya.pdf",
+                    downloadable: true
+                }
             ],
         },
-        {
-            title: "Resources",
-            links: [
-                { label: "Blog", url: "#" },
-                { label: "Wallpapers", url: "#" },
-                { label: "Assets", url: "#" },
-                { label: "Bookmarks", url: "#" },
-                { label: "Setup", url: "#" },
-                { label: "Learning", url: "#" },
-            ],
-        }, {
-            title: "Resources",
-            links: [
-                { label: "Blog", url: "#" },
-                { label: "Wallpapers", url: "#" },
-                { label: "Assets", url: "#" },
-                { label: "Bookmarks", url: "#" },
-                { label: "Setup", url: "#" },
-                { label: "Learning", url: "#" },
-            ],
-        }, {
-            title: "Resources",
-            links: [
-                { label: "Blog", url: "#" },
-                { label: "Wallpapers", url: "#" },
-                { label: "Assets", url: "#" },
-                { label: "Bookmarks", url: "#" },
-                { label: "Setup", url: "#" },
-                { label: "Learning", url: "#" },
-            ],
-        }, {
-            title: "Resources",
-            links: [
-                { label: "Blog", url: "#" },
-                { label: "Wallpapers", url: "#" },
-                { label: "Assets", url: "#" },
-                { label: "Bookmarks", url: "#" },
-                { label: "Setup", url: "#" },
-                { label: "Learning", url: "#" },
-            ],
-        }, {
-            title: "Resources",
-            links: [
-                { label: "Blog", url: "#" },
-                { label: "Wallpapers", url: "#" },
-                { label: "Assets", url: "#" },
-                { label: "Bookmarks", url: "#" },
-                { label: "Setup", url: "#" },
-                { label: "Learning", url: "#" },
-            ],
-        }, {
-            title: "Resources",
-            links: [
-                { label: "Blog", url: "#" },
-                { label: "Wallpapers", url: "#" },
-                { label: "Assets", url: "#" },
-                { label: "Bookmarks", url: "#" },
-                { label: "Setup", url: "#" },
-                { label: "Learning", url: "#" },
-            ],
-        },
+        // {
+        //     title: "Resources",
+        //     links: [
+        //         { label: "Blog", url: "#" },
+        //         { label: "Wallpapers", url: "#" },
+        //         { label: "Assets", url: "#" },
+        //         { label: "Bookmarks", url: "#" },
+        //         { label: "Setup", url: "#" },
+        //         { label: "Learning", url: "#" },
+        //     ],
+        // },
     ];
 
     return createPortal(
@@ -170,8 +115,9 @@ const LinkHubModal: React.FC<LinkHubModalProps> = ({ isOpen, onClose }) => {
                                         <a
                                             key={lIndex}
                                             href={link.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
+                                            {...(link.downloadable
+                                                ? { download: true }
+                                                : { target: "_blank", rel: "noopener noreferrer" })}
                                             className="px-4 py-3 bg-[#161616] border border-gray-800/50 rounded-lg text-sm text-gray-400 hover:text-white hover:border-[#1B7481]/50 hover:bg-[#1B7481]/5 transition-all duration-300 text-center truncate"
                                         >
                                             {link.label}

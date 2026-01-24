@@ -9,10 +9,12 @@ import { useGSAP } from "@gsap/react";
 import CircularGallery from "./CircularGallery";
 import Silk from "./Silk";
 import LinkHubModal from "./LinkHubModal";
+import WorkGalleryModal from "./WorkGalleryModal";
 
 const Hero = () => {
     const container = useRef(null);
     const [isLinkHubOpen, setIsLinkHubOpen] = useState(false);
+    const [isWorkGalleryOpen, setIsWorkGalleryOpen] = useState(false);
 
     useGSAP(() => {
         const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 } });
@@ -67,11 +69,11 @@ const Hero = () => {
 
                 <div className="hero-buttons flex flex-col items-center justify-center gap-6 sm:flex-row">
                     <ButtonPrimary onClick={() => setIsLinkHubOpen(true)}>Link Hub</ButtonPrimary>
-                    <ButtonSecondary>Work Galery</ButtonSecondary>
+                    <ButtonSecondary onClick={() => setIsWorkGalleryOpen(true)}>Work Galery</ButtonSecondary>
                 </div>
 
                 {/* Circular Gallery */}
-                <div className="hero-gallery" style={{ height: '370px', position: 'relative' }}>
+                {/* <div className="hero-gallery" style={{ height: '370px', position: 'relative' }}>
                     <CircularGallery
                         bend={1}
                         textColor="#ffffff"
@@ -87,7 +89,7 @@ const Hero = () => {
                             { image: '/images/certificate_1.webp', text: 'Certificate' },
                         ]}
                     />
-                </div>
+                </div> */}
             </div>
 
             {/* Scroll Indicator */}
@@ -101,6 +103,11 @@ const Hero = () => {
             <LinkHubModal
                 isOpen={isLinkHubOpen}
                 onClose={() => setIsLinkHubOpen(false)}
+            />
+
+            <WorkGalleryModal
+                isOpen={isWorkGalleryOpen}
+                onClose={() => setIsWorkGalleryOpen(false)}
             />
         </section >
     );

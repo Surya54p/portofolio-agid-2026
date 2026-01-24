@@ -30,7 +30,7 @@ const ProfileSection = () => {
                 {/* Profile Image */}
                 <div className="profile-img relative w-full max-w-lg aspect-16/10 rounded-[10px] overflow-hidden mb-12 shadow-2xl border border-white/10">
                     <Image
-                        src="/images/profile___1.png"
+                        src="/images/profile___1.webp"
                         alt="Surya Profile"
                         fill
                         className="object-cover"

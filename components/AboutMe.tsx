@@ -152,7 +152,7 @@ const AboutMe = () => {
                     <div className="space-y-6 hidden md:block">
                         <div className="about-image relative aspect-4/3 rounded-[10px] overflow-hidden bg-gray-800 shadow-2xl transition-transform duration-500">
                             <Image
-                                src="/images/profile___1.png"
+                                src="/images/profile___1.webp"
                                 alt="Landscape 1"
                                 fill
                                 className="object-cover"
@@ -160,7 +160,7 @@ const AboutMe = () => {
                         </div>
                         <div className="about-image relative aspect-4/3 rounded-[10px] overflow-hidden bg-gray-800 shadow-2xl transition-transform duration-500">
                             <Image
-                                src="/images/profile___2.png"
+                                src="/images/profile___2.webp"
                                 alt="Landscape 2"
                                 fill
                                 className="object-cover"

@@ -79,12 +79,12 @@ const Hero = () => {
                         scrollSpeed={2}
                         scrollEase={0.05}
                         items={[
-                            { image: '/images/profile___1.png', text: 'Profile 1' },
-                            { image: '/images/profile___2.png', text: 'Profile 2' },
-                            { image: '/images/landscape_1.png', text: 'Landscape' },
-                            { image: '/images/landscape_2.png', text: 'Nature' },
-                            { image: '/images/project_1.png', text: 'Project' },
-                            { image: '/images/certificate_1.png', text: 'Certificate' },
+                            { image: '/images/profile___1.webp', text: 'Profile 1' },
+                            { image: '/images/profile___2.webp', text: 'Profile 2' },
+                            { image: '/images/landscape_1.webp', text: 'Landscape' },
+                            { image: '/images/landscape_2.webp', text: 'Nature' },
+                            { image: '/images/project_1.webp', text: 'Project' },
+                            { image: '/images/certificate_1.webp', text: 'Certificate' },
                         ]}
                     />
                 </div>

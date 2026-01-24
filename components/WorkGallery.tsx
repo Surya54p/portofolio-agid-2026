@@ -16,7 +16,7 @@ const WorkGallery = () => {
     const projects = Array(8).fill({
         title: "Website 1",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi.",
-        image: "/images/project_1.png"
+        image: "/images/project_1.webp"
     });
 
     const [selectedProject, setSelectedProject] = useState<any>(null);

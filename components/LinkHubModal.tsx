@@ -41,7 +41,7 @@ const LinkHubModal: React.FC<LinkHubModalProps> = ({ isOpen, onClose }) => {
             title: "Social Media",
             links: [
                 { label: "LinkedIn", url: "#" },
-                { label: "Instagram", url: "#" },
+                { label: "Instagram", url: "https://www.instagram.com/surya4p_?igsh=MWF2ZjRyMWV5b3Q3Zg==" },
                 { label: "Twitter / X", url: "#" },
                 { label: "Threads", url: "#" },
                 { label: "Facebook", url: "#" },

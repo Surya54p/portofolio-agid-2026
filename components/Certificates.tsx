@@ -31,7 +31,7 @@ const certsData: Certificate[] = [
         date: "29 Agustus - 5 September 2024",
         description: "Menyelesaikan pelatihan 67 JP yang mencakup konsep dasar Data Science, pengumpulan dan penelaahan data, pembersihan data (cleaning), serta pembangunan dan evaluasi model data.",
         skills: ["Data Cleansing", "Data Modeling", "Data Validation", "Data Science Tools"],
-        image: "/images/cert/data_science/Sertifikat_SURYA ARIO PRATAMA_Associate Data Scientist_page-0001.jpg", // Pastikan file ada di public/images
+        image: "/images/cert/data_science/Sertifikat_SURYA ARIO PRATAMA_Associate Data Scientist_page-0001.webp",
     },
     {
         id: 2,
@@ -41,7 +41,7 @@ const certsData: Certificate[] = [
         date: "21 Juni - 3 Juli 2024",
         description: "Pelatihan intensif 67 JP yang berfokus pada implementasi User Interface, pemrograman terstruktur, penggunaan library/komponen pre-existing, serta penulisan kode sesuai best practices.",
         skills: ["Web Development", "User Interface", "Structured Programming", "Code Best Practices"],
-        image: "/images/cert/jwd_21_juni/Sertifikat_SURYA ARIO PRATAMA_Junior Web Developer_page-0001.jpg",
+        image: "/images/cert/jwd_21_juni/Sertifikat_SURYA ARIO PRATAMA_Junior Web Developer_page-0001.webp",
     },
     {
         id: 3,
@@ -51,7 +51,7 @@ const certsData: Certificate[] = [
         date: "27 April 2024",
         description: "Menyelesaikan kursus perancangan basis data (Database Design) dengan hasil memuaskan, mempelajari struktur dan pemodelan data yang efektif.",
         skills: ["Database Design", "Data Modeling", "Oracle"],
-        image: "/images/cert/database_design.jpg",
+        image: "/images/cert/database_design.webp",
     },
     {
         id: 13,
@@ -61,7 +61,7 @@ const certsData: Certificate[] = [
         date: "11 Mei 2023",
         description: "Menyelesaikan ujian akhir kursus Java Fundamentals dengan hasil memuaskan, mencakup penguasaan logika dasar dan pemrograman berorientasi objek menggunakan Java.",
         skills: ["Java", "Object-Oriented Programming", "Logic", "Algorithms"],
-        image: "/images/cert/java_fundamental.jpg",
+        image: "/images/cert/java_fundamental.webp",
     },
     {
         id: 4,
@@ -71,7 +71,7 @@ const certsData: Certificate[] = [
         date: "25 Agustus - 25 September 2024",
         description: "Bertanggung jawab menyusun dokumentasi akreditasi Prodi TI, memastikan kelengkapan data administratif dan akademik selama periode magang.",
         skills: ["Documentation", "Academic Administration", "Team Coordination"],
-        image: "/images/cert/setif-magang/setif magang_page-0001.jpg",
+        image: "/images/cert/setif-magang/setif magang_page-0001.webp",
     },
     {
         id: 5,
@@ -81,7 +81,7 @@ const certsData: Certificate[] = [
         date: "26 Februari 2025",
         description: "Memimpin penyelenggaraan workshop 'UI yang Interaktif dan UX yang User Friendly' yang diselenggarakan oleh Divisi Teknova HMIF.",
         skills: ["Leadership", "Event Management", "UI/UX Awareness"],
-        image: "/images/cert/ketua_pelaksana.jpg", // Sesuai nama file yang diupload
+        image: "/images/cert/ketua_pelaksana.webp",
     },
     {
         id: 6,
@@ -91,7 +91,7 @@ const certsData: Certificate[] = [
         date: "24 - 26 Juli 2025",
         description: "Bertugas sebagai tim teknis IT untuk mendukung kelancaran acara    Tech Expo 2025.",
         skills: ["IT Support", "Teamwork", "Technical Troubleshooting"],
-        image: "/images/cert/it_lumina.jpg", // Sesuai nama file yang diupload
+        image: "/images/cert/it_lumina.webp",
     },
     {
         id: 7,
@@ -101,7 +101,7 @@ const certsData: Certificate[] = [
         date: "26 Oktober 2024",
         description: "Peserta webinar masterclass mengenai metode riset UX untuk desain sistem interaktif.",
         skills: ["UX Research", "Interactive System Design"],
-        image: "/images/cert/webinar_ux/Surya Ario Pratama Certificate of Attendance_page-0001.jpg",
+        image: "/images/cert/webinar_ux/Surya Ario Pratama Certificate of Attendance_page-0001.webp",
     },
     {
         id: 8,
@@ -111,7 +111,7 @@ const certsData: Certificate[] = [
         date: "17 - 18 Januari 2024",
         description: "Mengikuti workshop pengembangan game menggunakan Unity Game Engine dalam rangka Global Game Jam Palembang 2024.",
         skills: ["Unity Game Engine", "Game Development"],
-        image: "/images/cert/workshop_gdp/Surya Aiyo Pratama_202402070927_24103_page-0001.jpg",
+        image: "/images/cert/workshop_gdp/Surya Aiyo Pratama_202402070927_24103_page-0001.webp",
     },
     {
         id: 9,
@@ -121,7 +121,7 @@ const certsData: Certificate[] = [
         date: "31 Oktober 2025",
         description: "Peserta webinar internasional mengenai keterlibatan lansia dan kesenjangan digital.",
         skills: ["Digital Literacy Awareness"],
-        image: "/images/cert/webinar_internatioanl_UIN_jakarta/surya.jpg",
+        image: "/images/cert/webinar_internatioanl_UIN_jakarta/surya.webp",
     },
     {
         id: 10,
@@ -131,7 +131,7 @@ const certsData: Certificate[] = [
         date: "9 Juli 2025",
         description: "Peserta seminar mengenai peluang dan penerapan Artificial Intelligence di lingkungan perguruan tinggi.",
         skills: ["Artificial Intelligence Awareness", "EdTech"],
-        image: "/images/cert/seminar_reboan.png", // Sesuai nama file yang diupload
+        image: "/images/cert/seminar_reboan.webp",
     },
     {
         id: 11,
@@ -141,7 +141,7 @@ const certsData: Certificate[] = [
         date: "26 September 2024",
         description: "Menyelesaikan kelas dasar visualisasi data (16 jam) mencakup pengolahan data dengan Google Sheets, transformasi data visual, serta penerapan prinsip desain dan storytelling data.",
         skills: ["Data Visualization", "Google Sheets", "Data Storytelling", "Design Principles"],
-        image: "/images/cert/sertifikat_course_177_2557740_260924185435_visualisasi_data/sertifikat_course_177_2557740_260924185435_visualisasi_data-page-00001.jpg",
+        image: "/images/cert/sertifikat_course_177_2557740_260924185435_visualisasi_data/sertifikat_course_177_2557740_260924185435_visualisasi_data-page-00001.webp",
     },
 
 ];

@@ -1,15 +1,18 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import ButtonPrimary from "./ButtonPrimary";
 import ButtonSecondary from "./ButtonSecondary";
 import ButtonTertiary from "./ButtonTertiary";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import CircularGallery from "./CircularGallery";
+import Silk from "./Silk";
+import LinkHubModal from "./LinkHubModal";
 
 const Hero = () => {
     const container = useRef(null);
+    const [isLinkHubOpen, setIsLinkHubOpen] = useState(false);
 
     useGSAP(() => {
         const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 } });
@@ -24,19 +27,30 @@ const Hero = () => {
 
     return (
         <section ref={container} className="relative flex min-h-screen flex-col items-center justify-center bg-[#0f0f0f] px-4 text-center overflow-hidden">
-            <div className="absolute inset-0 pointer-events-none">
+
+            {/* Silk Background */}
+            <div className="absolute inset-0 z-0">
+                <Silk
+                    speed={5}
+                    scale={1}
+                    color="#1B7481"
+                    noiseIntensity={1.5}
+                    rotation={0}
+                />
+            </div>
+            {/* dot bg */}
+            {/* <div className="absolute inset-0 pointer-events-none -z-10">
                 <div
                     className="absolute inset-0 opacity-[0.15]"
                     style={{
                         backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)',
                         backgroundSize: '32px 32px'
                     }}
-                ></div>
-
-                {/* Soft Radial Glows */}
+                />
                 <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#0D6EFD]/10 blur-[120px] rounded-full"></div>
                 <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-[#0D6EFD]/5 blur-[100px] rounded-full"></div>
-            </div>
+            </div> */}
+
 
             <div className="relative z-10 max-w-3xl w-full">
                 <h2 className="hero-welcome mb-2 text-xl font-light italic tracking-wide text-gray-300 md:text-2xl drop-shadow-sm">
@@ -52,7 +66,7 @@ const Hero = () => {
                 </p>
 
                 <div className="hero-buttons flex flex-col items-center justify-center gap-6 sm:flex-row">
-                    <ButtonPrimary>Link Hub</ButtonPrimary>
+                    <ButtonPrimary onClick={() => setIsLinkHubOpen(true)}>Link Hub</ButtonPrimary>
                     <ButtonSecondary>Work Galery</ButtonSecondary>
                 </div>
 
@@ -83,8 +97,14 @@ const Hero = () => {
 
             {/* Subtle bottom fade */}
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-[#0a0a0a] to-transparent"></div>
-        </section>
+
+            <LinkHubModal
+                isOpen={isLinkHubOpen}
+                onClose={() => setIsLinkHubOpen(false)}
+            />
+        </section >
     );
 };
 
 export default Hero;
+

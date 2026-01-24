@@ -12,24 +12,29 @@ const MyJourney = () => {
 
     const events = [
         {
-            year: "2021",
-            title: "Starting Point",
-            description: "Mulai perjalanan di Teknik Informatika. Fokus membangun fondasi logika pemrograman, algoritma dasar, dan memahami cara berpikir sebagai problem solver."
-        },
-        {
             year: "2022",
-            title: "Exploring & Building",
-            description: "Mulai serius di pengembangan web. Membangun beberapa project menggunakan React dan Next.js, belajar version control dengan Git, dan terbiasa bekerja dengan API serta struktur frontend yang rapi."
+            title: "Starting Point",
+            description: "Memulai belajar basic website dan titik di mana aku mengenal koding. Ini terjadi ketika aku ingin masuk ke teknik informatika dan dorongan atas ketidakmengertian tentang komputer."
         },
         {
             year: "2023",
-            title: "Diving into Deep Tech",
-            description: "Masuk ke ranah Machine Learning dan pengolahan citra. Mengerjakan penelitian skripsi tentang pengenalan sidik jari menggunakan algoritma SVM, serta membangun backend menggunakan FastAPI untuk kebutuhan sistem akademik dan riset."
+            title: "Early College",
+            description: "Awal kuliah di mana aku aktif dalam membuat proyek basic websites dan kuliah."
         },
         {
             year: "2024",
-            title: "Refining & Scaling",
-            description: "Fokus pada kualitas: clean code, arsitektur yang scalable, dan UI yang usable. Menyusun portfolio, memperkuat project nyata, dan siap terjun ke dunia industri sebagai Web Developer / Machine Learning Enthusiast."
+            title: "Diving into Tools & Frameworks",
+            description: "Fokus ke pendalaman tools seperti Git dan bahasa pemrograman serta framework. Framework pertamaku adalah Laravel kemudian disusul Next.js. Di titik ini juga aku mengenal Figma dan UI/UX."
+        },
+        {
+            year: "2025",
+            title: "Proficiency & Organizations",
+            description: "Mulai terbiasa dengan penggunaan tools dan menerapkannya dalam semua proyek. Belajar mengenai struktur kode, best practice, clean architecture, dan type-specific dalam ngoding. Di bidang UI/UX, sering mengikuti organisasi dan bekerja dalam event tersebut baik secara desain maupun kodingan website."
+        },
+        {
+            year: "2026",
+            title: "Logic & Algorithm Focus",
+            description: "Mencoba menerapkan semua materi yang sudah dipelajari dalam tahun-tahun sebelumnya dan berfokus pada pendalaman logika dan algoritma."
         }
     ];
 

@@ -21,7 +21,7 @@ const Hero = () => {
 
         tl.from(".hero-welcome", { opacity: 0, y: 30, delay: 0.2 })
             .from(".hero-title", { opacity: 0, y: 50 }, "-=0.7")
-            .from(".hero-desc", { opacity: 0, y: 20 }, "-=0.8")
+            .from(".hero-desc", { opacity: 0, y: 20 }, "-=0.7")
             .from(".hero-buttons", { opacity: 0, y: 20, scale: 0.95 }, "-=0.8")
             .from(".hero-gallery", { opacity: 0, y: 30 }, "-=0.6")
             .from(".hero-scroll", { opacity: 0, height: 0 }, "-=0.5");
@@ -55,7 +55,7 @@ const Hero = () => {
 
 
             <div className="relative z-10 max-w-3xl w-full">
-                <h2 className="hero-welcome mb-2 text-xl font-light italic tracking-wide text-gray-300 md:text-2xl drop-shadow-sm">
+                <h2 className="hero-welcome mb-2 text-xl font-light italic tracking-wide text-white md:text-2xl drop-shadow-sm">
                     Welcome to my personal
                 </h2>
 
@@ -63,7 +63,7 @@ const Hero = () => {
                     Portofolio
                 </h1>
 
-                <p className="hero-desc mb-10 text-sm font-light tracking-widest text-gray-400 md:text-base">
+                <p className="hero-desc mb-10 text-sm font-light tracking-widest text-white md:text-base">
                     Lulusan Ekonomi Syariah | Financial Analysis | Administrative Professional
                 </p>
 

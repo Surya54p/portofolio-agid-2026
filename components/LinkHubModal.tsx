@@ -59,7 +59,7 @@ const LinkHubModal: React.FC<LinkHubModalProps> = ({ isOpen, onClose }) => {
                 { label: "WhatsApp", url: "https://wa.me/6281324662603" },
                 {
                     label: "Curiculum Vitae",
-                    url: "#",
+                    url: "/file/Resume Agid Nurhaliza.pdf",
                     downloadable: true
                 }
             ],

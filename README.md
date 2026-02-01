@@ -16,3 +16,4 @@ I'm always open to new challenges, whether it's an internship, a freelance proje
 Feel free to explore and reach out! 
 
 ✨ *Crafted with precision, powered by curiosity.*
+# portofolio-agid-2026

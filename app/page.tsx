@@ -3,7 +3,8 @@ import { useRef } from "react";
 import Hero from "@/components/Hero";
 import ProfileSection from "@/components/ProfileSection";
 import AboutMe from "@/components/AboutMe";
-import MyJourney from "@/components/MyJourney";
+import Experience from "@/components/Experience";
+// import MyJourney from "@/components/MyJourney";
 // import WorkGallery from "@/components/WorkGallery";
 import Certificates from "@/components/Certificates";
 import Skills from "@/components/Skills";
@@ -42,7 +43,8 @@ export default function Home() {
             <Hero />
             <ProfileSection />
             <AboutMe />
-            <MyJourney />
+            <Experience />
+            {/* <MyJourney /> */}
             {/* <WorkGallery /> */}
             <Certificates />
             <Skills />

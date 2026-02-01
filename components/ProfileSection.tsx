@@ -28,12 +28,12 @@ const ProfileSection = () => {
         <section ref={sectionRef} className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white">
             <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
                 {/* Profile Image */}
-                <div className="profile-img relative w-full max-w-lg aspect-16/10 rounded-[10px] overflow-hidden mb-12 shadow-2xl border border-white/10">
+                <div className="profile-img relative w-full max-w-lg aspect-16/16 rounded-[10px] overflow-hidden mb-12 shadow-2xl border border-white/10 ">
                     <Image
-                        src="/images/profile___1.webp"
-                        alt="Surya Profile"
+                        src="/images/profile-1.webp"
+                        alt="Agid Nurhaliza Profile"
                         fill
-                        className="object-cover"
+                        className="object-cover object-[center_10%]"
                         priority
                     />
                 </div>
@@ -45,10 +45,12 @@ const ProfileSection = () => {
 
                 <div className="profile-text space-y-6 text-gray-300 leading-relaxed text-sm md:text-base max-w-2xl">
                     <p>
-                        Namaku <span className="font-semibold text-white">Surya Ario Pratama</span>, aku adalah seorang Tech Enthusiast dan mahasiswa <span className="font-semibold text-white">Teknik Informatika</span> yang hobi mengubah ide menjadi aplikasi nyata. Buatku, coding bukan cuma soal yang penting jadi, tapi tentang menciptakan pengalaman pengguna yang mulus dan menjawab kebutuhan pengguna.
-                    </p>
-                    <p>
-                        Sehari-hari, aku sering menuangkan ide desain <span className="font-semibold text-white">UI/UX</span> di <span className="font-semibold text-white">Figma</span> sebelum menghidupkannya dengan kode. Aku biasa bereksperimen menggunakan <span className="font-semibold text-white">React</span> dan Next.js untuk tampilan antarmuka, serta memperkuat sistem di belakang layar menggunakan <span className="font-semibold text-white">Laravel</span>, atau <span className="font-semibold text-white">FastAPI</span>. Aku sangat menyukai tantangan baru, terutama yang berhubungan dengan pengembangan web dan eksplorasi dunia <span className="font-semibold text-white">AI & Machine Learning</span>.
+                        Aku Agid Nurhaliza Lulusan Ekonomi syariah yang telah menyelesaikan magang di salah satu lembaga keuangan
+                        perbankan. Memiliki dasar keilmuan ekonomi yang kuat, dilengkapi pengalaman praktis dalam
+                        analisis data, manajemen klien, dan operasional keuangan. Memiliki kemampuan kepemimpinan,
+                        komunikasi, dan kolaborasi tim yang solid. Cepat beradaptasi dengan lingkungan baru, mudah
+                        berbaur dengan berbagai karakter, dan didorong oleh rasa ingin tahu yang besar untuk terus belajar
+                        dan berkembang secara profesional.
                     </p>
                 </div>
             </div>

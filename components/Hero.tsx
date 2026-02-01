@@ -35,7 +35,7 @@ const Hero = () => {
                 <Silk
                     speed={5}
                     scale={1}
-                    color="#1B7481"
+                    color="#B4C990"
                     noiseIntensity={1.5}
                     rotation={0}
                 />
@@ -64,7 +64,7 @@ const Hero = () => {
                 </h1>
 
                 <p className="hero-desc mb-10 text-sm font-light tracking-widest text-gray-400 md:text-base">
-                    In this website you will find some of my work
+                    Lulusan Ekonomi Syariah | Financial Analysis | Administrative Professional
                 </p>
 
                 <div className="hero-buttons flex flex-col items-center justify-center gap-6 sm:flex-row">

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown, Rocket, Briefcase, GraduationCap, Code } from "lucide-react";
+import { Menu, X, ChevronDown, Rocket, Briefcase, GraduationCap, Layers } from "lucide-react";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
@@ -46,10 +46,9 @@ const Navbar = () => {
     };
 
     const dropdownItems = [
-        { name: "My Journey", icon: <Rocket className="w-4 h-4" />, href: "#my-journey" },
-        // { name: "Work Gallery", icon: <Briefcase className="w-4 h-4" />, href: "#work-gallery" },
+        { name: "Experience", icon: <Briefcase className="w-4 h-4" />, href: "#experience" },
         { name: "Certificates", icon: <GraduationCap className="w-4 h-4" />, href: "#certificates" },
-        { name: "Skills", icon: <Code className="w-4 h-4" />, href: "#skills" },
+        { name: "Skills", icon: <Layers className="w-4 h-4" />, href: "#skills" },
     ];
 
     return (
@@ -60,12 +59,9 @@ const Navbar = () => {
             >
                 <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-between">
                     {/* Brand */}
-                    <Link href="/" className="flex items-center gap-3 group">
-                        <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-600/20 group-hover:scale-110 transition-transform">
-                            <div className="w-5 h-5 border-2 border-white rotate-45"></div>
-                        </div>
+                    <Link href="/" className="group">
                         <span className="text-xl font-medium text-white tracking-tight italic">
-                            Surya<span className="text-blue-500 font-bold not-italic">.</span>
+                            Agid Nurhaliza<span className="text-blue-500 font-bold not-italic">.</span>
                         </span>
                     </Link>
 
@@ -86,7 +82,7 @@ const Navbar = () => {
                                 onMouseEnter={() => setIsDropdownOpen(true)}
                                 className="flex items-center gap-1 text-sm font-medium text-gray-300 hover:text-white transition-colors"
                             >
-                                Work <ChevronDown className={`w-4 h-4 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`} />
+                                Portfolio <ChevronDown className={`w-4 h-4 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`} />
                             </button>
 
                             {/* Dropdown Menu */}
@@ -162,7 +158,7 @@ const Navbar = () => {
                         </Link>
 
                         <div className="space-y-6">
-                            <span className="text-xs font-bold text-gray-600 uppercase tracking-widest">Work Selection</span>
+                            <span className="text-xs font-bold text-gray-600 uppercase tracking-widest">Portfolio</span>
                             <div className="grid grid-cols-1 gap-4">
                                 {dropdownItems.map((item) => (
                                     <Link

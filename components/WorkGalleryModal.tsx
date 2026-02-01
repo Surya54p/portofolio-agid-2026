@@ -28,21 +28,15 @@ const WorkGalleryModal: React.FC<WorkGalleryModalProps> = ({ isOpen, onClose }) 
     if (!mounted || !isOpen) return null;
 
     const images = [
-        { image: '/images/work_galery/DSC05249.webp', text: 'DSC05249' },
-        { image: '/images/work_galery/Instagram post - 1.webp', text: 'Desain UI UX' },
-        { image: '/images/work_galery/Instagram post - 2.webp', text: 'Desain UI UX' },
-        { image: '/images/work_galery/Instagram post - 3.webp', text: 'Desain UI UX' },
-        { image: '/images/work_galery/Instagram post - 4.webp', text: 'Desain UI UX' },
-        { image: '/images/work_galery/Instagram post - 5.webp', text: 'Desain UI UX' },
-        { image: '/images/work_galery/Instagram post - 6.webp', text: 'Desain UI UX' },
-        { image: '/images/work_galery/hero-2.webp', text: 'Hero 2' },
-        { image: '/images/work_galery/lumina.webp', text: 'Lumina' },
-        { image: '/images/work_galery/operrator-obs.webp', text: 'Operator OBS' },
-        { image: '/images/work_galery/seminar-kp.webp', text: 'Seminar KP' },
-        { image: '/images/work_galery/seminar-ui-ux-1.webp', text: 'Seminar UI UX 1' },
-        { image: '/images/work_galery/seminar-ui-ux-2.webp', text: 'Seminar UI UX 2' },
-        { image: '/images/work_galery/seminar-ui-ux-3.webp', text: 'Seminar UI UX 3' },
-        { image: '/images/work_galery/terbit-buku-game-roblox.webp', text: 'Terbit Buku Game Roblox' },
+        { image: '/images/work_galery/image-1.webp', text: 'Financial Analysis' },
+        { image: '/images/work_galery/image-2.webp', text: 'Banking Operations' },
+        { image: '/images/work_galery/image-3.webp', text: 'Administrative Management' },
+        { image: '/images/work_galery/image-4.webp', text: 'Customer Relations' },
+        { image: '/images/work_galery/image-5.webp', text: 'Economic Research' },
+        { image: '/images/work_galery/image-6.webp', text: 'Public Speaking' },
+        { image: '/images/profile-1.webp', text: 'Professional Profile' },
+        { image: '/images/profile-2.webp', text: 'Portfolio Item' },
+        { image: '/images/profile-3.webp', text: 'Portfolio Item' },
     ];
 
     // DomeGallery expects ImageItem[] which is string | { src: string; alt?: string }

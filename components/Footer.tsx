@@ -7,9 +7,9 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row justify-between items-start gap-12">
                     {/* Left Side */}
                     <div className="space-y-6 max-w-xl">
-                        <h2 className="text-4xl md:text-5xl font-normal tracking-tight">Surya Ario Pratama</h2>
+                        <h2 className="text-4xl md:text-5xl font-normal tracking-tight italic">Agid Nurhaliza</h2>
                         <p className="text-gray-400 italic text-sm md:text-base leading-relaxed">
-                            "despite everything, I love being alive."
+                            "Ekonomi Syariah | Financial Analysis | Administrative Professional"
                         </p>
                     </div>
 
@@ -18,13 +18,13 @@ const Footer = () => {
                         <h3 className="text-lg font-normal tracking-wide">Social media</h3>
                         <ul className="space-y-3">
                             <li>
-                                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">WhatsApp</a>
+                                <a href="https://wa.me/6281324662603" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-sm">WhatsApp</a>
                             </li>
                             <li>
-                                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Instagram</a>
+                                <a href="https://www.instagram.com/agidnh?igsh=MTVlem5xdWtpeWxxdg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-sm">Instagram</a>
                             </li>
                             <li>
-                                <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Email</a>
+                                <a href="mailto:agidnurhaliza03@gmail.com" className="text-gray-400 hover:text-white transition-colors text-sm">Email</a>
                             </li>
                         </ul>
                     </div>
@@ -32,7 +32,7 @@ const Footer = () => {
 
                 <div className="mt-20 pt-8 border-t border-white/5">
                     <p className="text-xs text-gray-500">
-                        © 2026 Surya. Built with purpose and passion.
+                        © 2026 Agid Nurhaliza. developed by <a href="https://bw-build-web.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-sm">Bikin Web</a>.
                     </p>
                 </div>
             </div>

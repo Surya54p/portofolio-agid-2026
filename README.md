@@ -1,21 +1,18 @@
-# Surya Ario Pratama | Portfolio 2026
+# Agid Nurhaliza | Portfolio 2026
 
-Welcome to my personal corner of the web! 🚀
+Welcome to my professional portfolio! 💼
 
-I am **Surya Ario Pratama**, a Tech Enthusiast and Informatics student dedicated to turning complex ideas into seamless digital experiences. This portfolio showcases my journey, my skills, and the projects I've built with passion and precision.
+I am **Agid Nurhaliza**, an Economics graduate with a focus on Islamic Finance and Banking. This portfolio highlights my educational background, internship experience at Bank Syariah Indonesia, and my passion for economic analysis and administrative excellence.
 
 ### What's Inside?
-- **My Journey**: A timeline of my growth from a curious student to a full-stack developer.
-- **Work Gallery**: A collection of web applications and digital solutions I've developed.
-- **Skills**: My expertise in modern web technologies, UI/UX design, and AI exploration.
-- **Certificates**: Proof of my continuous learning and professional development.
+- **Experience**: Details of my education, internships, and organizational leadership roles.
+- **Skills**: My expertise in financial analysis, administrative management, and creative tools like Canva & Lightroom.
+- **Certificates**: A showcase of my academic and professional certifications.
 
-### Let's Create Something Great
-I'm always open to new challenges, whether it's an internship, a freelance project, or just a friendly chat about the latest in tech.
+### Let's Connect
+I am open to professional opportunities in banking, finance, and economic research.
 
-Feel free to explore and reach out! 
-
-✨ *Crafted with precision, powered by curiosity.*
+✨ *Melayani dengan integritas, berkembang dengan dedikasi.*
 # portofolio-agid-2026
 # portofolio-agid-2026
 # portofolio-agid-2026

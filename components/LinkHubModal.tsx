@@ -41,26 +41,25 @@ const LinkHubModal: React.FC<LinkHubModalProps> = ({ isOpen, onClose }) => {
         {
             title: "Social Media",
             links: [
-                { label: "LinkedIn", url: "https://www.linkedin.com/in/surya-ario-pratama-354431285" },
-                { label: "Instagram", url: "https://www.instagram.com/surya4p_?igsh=MWF2ZjRyMWV5b3Q3Zg==" },
-                { label: "Threads", url: "#" },
+                { label: "LinkedIn", url: "https://www.linkedin.com/in/agid-nurhaliza-16a2ab24b" },
+                { label: "Instagram", url: "https://www.instagram.com/agidnh?igsh=MTVlem5xdWtpeWxxdg%3D%3D&utm_source=qr" },
             ],
         },
         {
-            title: "Projects Hub",
+            title: "Projects & Portofolio",
             links: [
-                { label: "GitHub", url: "https://github.com/Surya54p" },
-                { label: "Figma", url: "https://www.figma.com/design/ToUhnCpidtLDMJ5UBB7J0X/My-work?node-id=9-57&t=ZwheJu2n1K48FT5t-1" },
+                { label: "Certificates", url: "#certificates" },
+                { label: "Experience", url: "#experience" },
             ],
         },
         {
-            title: "Contact & Tools",
+            title: "Contact",
             links: [
-                { label: "Email Me", url: "#" },
-                { label: "WhatsApp", url: "#" },
+                { label: "Email Me", url: "mailto:agidnurhaliza03@gmail.com" },
+                { label: "WhatsApp", url: "https://wa.me/6281324662603" },
                 {
                     label: "Curiculum Vitae",
-                    url: "/file/cv-surya.pdf",
+                    url: "#",
                     downloadable: true
                 }
             ],

@@ -41,7 +41,7 @@ const AboutMe = () => {
     return (
         <section id="about-me" ref={sectionRef} className="bg-[#0f0f0f] py-20 px-6 md:px-12 lg:px-24 text-white overflow-hidden">
             <div className="max-w-7xl mx-auto">
-                <h2 className="about-title text-3xl md:text-4xl font-normal mb-12">About me</h2>
+                <h2 className="about-title text-3xl md:text-4xl font-normal mb-12 underline underline-offset-8 decoration-blue-500/50">About me</h2>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     {/* Left Column: Content */}
@@ -49,7 +49,7 @@ const AboutMe = () => {
                         <div className="about-item">
                             <h3 className="text-lg font-normal mb-3">What I Do</h3>
                             <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-                                Build scalable web applications and data-driven solutions with a focus on clean architecture and performance.
+                                Berfokus pada analisis data ekonomi, manajemen administrasi, dan pengembangan strategi keuangan syariah yang inovatif dan terstruktur.
                             </p>
                         </div>
 
@@ -58,15 +58,15 @@ const AboutMe = () => {
                             <ul className="text-gray-300 space-y-2 text-sm md:text-base">
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
-                                    Fullstack web (React / Next.js + FastAPI)
+                                    Analisis data keuangan & perbankan syariah
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
-                                    Machine learning for pattern recognition
+                                    Manajemen operasional & administrasi akad
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
-                                    Improving code quality & type safety
+                                    Eksplorasi E-Government untuk Good Governance
                                 </li>
                             </ul>
                         </div>
@@ -76,15 +76,15 @@ const AboutMe = () => {
                             <ul className="text-gray-300 space-y-2 text-sm md:text-base">
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
-                                    Final-year Informatics student
+                                    Lulusan S-1 Ekonomi Syariah (IPK 3.78)
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
-                                    Thesis: Fingerprint recognition using SVM
+                                    Skripsi Terbaik Fakultas Syariah & Ekonomi Islam 2025
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
-                                    Built multiple academic & personal web projects
+                                    Juara Olimpiade Ekonomi Islam Tingkat Nasional
                                 </li>
                             </ul>
                         </div>
@@ -94,19 +94,19 @@ const AboutMe = () => {
                             <ul className="text-gray-300 space-y-2 text-sm md:text-base">
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
-                                    Clean & maintainable code
+                                    Teliti & terstruktur dalam administrasi
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
-                                    Modular and reusable components
+                                    Komunikasi & kolaborasi tim yang solid
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
-                                    Performance-aware development
+                                    Berorientasi pada detail dan akurasi data
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
-                                    Clear documentation
+                                    Cepat beradaptasi dengan lingkungan baru
                                 </li>
                             </ul>
                         </div>
@@ -116,19 +116,19 @@ const AboutMe = () => {
                             <ul className="text-gray-300 space-y-2 text-sm md:text-base">
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
-                                    Web application development
+                                    Analisis dokumen pembiayaan & kelayakan nasabah
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
-                                    Frontend implementation
+                                    Manajemen pengarsipan & administrasi laporan
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
-                                    API integration
+                                    Riset pasar & analisis konsumen bisnis
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
-                                    ML prototyping
+                                    Pendampingan UMKM (Implementasi QRIS & Akad)
                                 </li>
                             </ul>
                         </div>
@@ -138,11 +138,11 @@ const AboutMe = () => {
                             <ul className="text-gray-300 space-y-2 text-sm md:text-base">
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
-                                    Open for internship
+                                    Terbuka untuk peluang karir profesional perbankan
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2">•</span>
-                                    Open for freelance / project-based work
+                                    Siap berkontribusi dalam proyek riset ekonomi
                                 </li>
                             </ul>
                         </div>
@@ -152,18 +152,18 @@ const AboutMe = () => {
                     <div className="space-y-6 hidden md:block">
                         <div className="about-image relative aspect-4/3 rounded-[10px] overflow-hidden bg-gray-800 shadow-2xl transition-transform duration-500">
                             <Image
-                                src="/images/profile___1.webp"
-                                alt="Landscape 1"
+                                src="/images/profile-2.webp"
+                                alt="Profile 2"
                                 fill
-                                className="object-cover"
+                                className="object-cover object-[center_20%]"
                             />
                         </div>
                         <div className="about-image relative aspect-4/3 rounded-[10px] overflow-hidden bg-gray-800 shadow-2xl transition-transform duration-500">
                             <Image
-                                src="/images/profile___2.webp"
-                                alt="Landscape 2"
+                                src="/images/profile-3.webp"
+                                alt="Profile 3"
                                 fill
-                                className="object-cover"
+                                className="object-cover object-[center_70%]"
                             />
                         </div>
                     </div>
